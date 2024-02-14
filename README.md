@@ -29,25 +29,16 @@ This study employed the [TCIA Pediatric-CT-SEG](https://wiki.cancerimagingarchiv
    - Construct commands for each GPU, specifying the part ID and the number of parts.
    - Execute commands in the background.
 
-3. **Wait for Completion:**
-   - Wait for all background processes to finish.
-
-4. **Completion Message:**
-   - Print a completion message.
-
 ### [run_trainingpipeline_peds_nnunet.sh](https://github.com/UM2ii/Better-PediatricCT-segmentation/blob/main/run_trainingpipeline_peds_nnunet.sh):
 
-1. **Welcome Message:**
-   - Display a welcome message explaining the script's purpose.
-
-2. **User Input:**
+1. **User Input:**
    - Prompt the user to input the task name identifier and the path to the testing data folder.
 
-3. **Training:**
+2. **Training:**
    - Initiate training on multiple GPUs for the specified task.
    - Wait for training processes to finish.
 
-4. **Prediction:**
+3. **Prediction:**
    - Create a directory for storing prediction results.
    - Perform prediction using trained model on the testing data.
 
@@ -86,6 +77,7 @@ CUDA_VISIBLE_DEVICES=<gpu_id> nnUNet_train ...: Initiates training on the specif
 nnUNetTrainerV5_4000epochs_nomirror: Specifies the [custom trainer configuration]() and the number of epochs for training (4000 epochs with no mirroring augmentation).
 711 <fold_number>: Specifies the dataset and fold number for training.
 -pretrained_weights <path_to_pretrained_model>: Specifies the path to the pre-trained model weights from Step 3.
+
 #### Step 5: Generate predictions
 Command:
 ```
