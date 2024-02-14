@@ -11,7 +11,7 @@ conda env create -f environment.yml
 
 Depending on your GPU and CUDA version, please update Pytorch to ensure that you have the correct CUDA version of Pytorch installed on your system.
 
-This code depends on nnUNet v1 for training and predicting all models. Please ensure that after setting up nnUNet, you have taken care to set up the required paths as shown [here](https://github.com/MIC-DKFZ/nnUNet/blob/nnunetv1/documentation/setting_up_paths.md).
+This code depends on [nnUNet v1](https://github.com/MIC-DKFZ/nnUNet/tree/nnunetv1) for training and predicting all models. Please ensure that after setting up nnUNet, you have taken care to set up the required paths as shown [here](https://github.com/MIC-DKFZ/nnUNet/blob/nnunetv1/documentation/setting_up_paths.md).
 
 ## Datasets
 
