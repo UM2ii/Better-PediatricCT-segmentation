@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define paths to input and output directories
-input_dir="/home/akanhere/nnunet/nnUNet_raw_data_base/nnUNet_raw_data/Task713_Peds_Fine/imagesTs"
-output_dir="/home/akanhere/nnunet/home/akanhere/nnunet/RESULTS/Results_711_onAMOS713"
+input_dir="<PATH_TO_NNUNET_DIR>/nnunet/nnUNet_raw_data_base/nnUNet_raw_data/Task713_Peds_Fine/imagesTs"
+output_dir="<PATH_TO_NNUNET_DIR>/nnunet/nnunet/RESULTS/Results_711_onAMOS713"
 
 # Define the base command for nnUNet_predict
 base_command="nnUNet_predict -i ${input_dir} -o ${output_dir} -t 711 -m 3d_fullres -tr nnUNetTrainerV5_4000epochs_nomirror --num_threads_preprocessing 30 --num_threads_nifti_save 30 --disable_tta"

@@ -65,7 +65,7 @@ Description: This step involves planning and preprocessing the target pediatric 
 #### Step 2: Planning and Preprocessing for the source adult dataset
 Command: 
 ```
-nnUNet_plan_and_preprocess -t 713 -overwrite_plans /home/akanhere/nnunet/home/akanhere/nnunet/RESULTS/nnUNet/3d_fullres/Task711_Ped_Fresh/nnUNetTrainerV3_100epochs__nnUNetPlansv2.1/plans.pkl -overwrite_plans_identifier nnUNetTrainerV3_100epochs__nnUNetPlansv2.1 -pl3d ExperimentPlanner3D_v21_Pretrained -tf 100
+nnUNet_plan_and_preprocess -t 713 -overwrite_plans <PATH_TO_NNUNET_DIR>/nnunet/RESULTS/nnUNet/3d_fullres/Task711_Ped_Fresh/nnUNetTrainerV3_100epochs__nnUNetPlansv2.1/plans.pkl -overwrite_plans_identifier nnUNetTrainerV3_100epochs__nnUNetPlansv2.1 -pl3d ExperimentPlanner3D_v21_Pretrained -tf 100
 ```
 Description: Similar to Step 1, this step plans and preprocesses the source adult dataset (ID 713). The overwrite_plans and overwrite_plans_identifier flags specify that existing plans should be overwritten with new plans, and the pl3d flag indicates the type of planner to use (ExperimentPlanner3D_v21_Pretrained). -tf is the number of processes used for preprocessing the full-resolution data of the 2D U-Net and 3D U-Net.
 
@@ -89,7 +89,7 @@ nnUNetTrainerV5_4000epochs_nomirror: Specifies the [custom trainer configuration
 #### Step 5: Generate predictions
 Command:
 ```
-CUDA_VISIBLE_DEVICES=6 nnUNet_predict -i /home/akanhere/nnunet/nnUNet_raw_data_base/nnUNet_raw_data/Task711_Ped_Fresh/imagesTs \
+CUDA_VISIBLE_DEVICES=6 nnUNet_predict -i <PATH_TO_NNUNET_DIR>/nnunet/nnUNet_raw_data_base/nnUNet_raw_data/Task711_Ped_Fresh/imagesTs \
 -o "$RESULTS_FOLDER/Results_711_finetuned_100nomirror" -t 711 -m 3d_fullres -tr nnUNetTrainerV5_100epochs_nomirror \
 --num_threads_preprocessing 30 --num_threads_nifti_save 30 --disable_tta
 ```
